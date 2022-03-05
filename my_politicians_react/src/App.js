@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Navbar from './Components/Navbar';
+import PositionTitle from './Components/PositionTitle';
+import PoliticianCard from './Components/PoliticianCard';
+import { officialsData } from './script';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<Navbar></Navbar>
+			<PositionTitle title="President"></PositionTitle>
+			<PoliticianCard name={officialsData[0]}></PoliticianCard>
+			<PositionTitle title="Governor"></PositionTitle>
+			<PoliticianCard></PoliticianCard>
+			<PositionTitle title="Senator"></PositionTitle>
+			<PoliticianCard></PoliticianCard>
+			<PositionTitle title="Representative"></PositionTitle>
+			<PoliticianCard></PoliticianCard>
+		</div>
+	);
 }
 
 export default App;
